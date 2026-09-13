@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MD Sadan Gaming</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#080b12;
+    color:white;
+}
+
+header{
+    background:#101522;
+    padding:18px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#00ff88;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+.hero{
+    text-align:center;
+    padding:70px 20px;
+    background:linear-gradient(135deg,#111827,#071b18);
+}
+
+.hero h1{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.hero h1 span{
+    color:#00ff88;
+}
+
+.hero p{
+    color:#b8c0cc;
+    margin-bottom:25px;
+}
+
+.search{
+    width:90%;
+    max-width:500px;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    outline:none;
+    font-size:16px;
+}
+
+section{
+    padding:45px 6%;
+}
+
+.title{
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+.games{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#111722;
+    border:1px solid #202938;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    border-color:#00ff88;
+}
+
+.game-img{
+    height:140px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:55px;
+    background:linear-gradient(135deg,#18251f,#111827);
+}
+
+.info{
+    padding:18px;
+}
+
+.info h3{
+    margin-bottom:8px;
+}
+
+.rating{
+    color:#ffd700;
+    margin-bottom:15px;
+}
+
+button{
+    width:100%;
+    padding:11px;
+    border:none;
+    border-radius:8px;
+    background:#00ff88;
+    color:#06100b;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#00d976;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#101522;
+    color:#8d96a5;
+}
+
+.no-result{
+    display:none;
+    text-align:center;
+    color:#aaa;
+    margin-top:20px;
+}
+
+@media(max-width:600px){
+    .hero h1{
+        font-size:34px;
+    }
+
+    nav{
+        display:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">MD <span>SADAN</span> 🎮</div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#trending">Trending</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>Welcome to <span>MD Sadan</span></h1>
+    <p>Your ultimate gaming zone</p>
+
+    <input
+        type="text"
+        class="search"
+        id="search"
+        placeholder="🔍 Search games..."
+    >
+</div>
+
+<section id="trending">
+
+    <h2 class="title">🔥 Trending Games</h2>
+
+    <div class="games" id="gameList">
+
+        <div class="card" data-name="Free Fire">
+            <div class="game-img">🔥</div>
+            <div class="info">
+                <h3>Free Fire</h3>
+                <div class="rating">★★★★★</div>
+                <button onclick="playGame('Free Fire')">
+                    Play Now
+                </button>
+            </div>
+        </div>
+
+        <div class="card" data-name="Minecraft">
+            <div class="game-img">⛏️</div>
+            <div class="info">
+                <h3>Minecraft</h3>
+                <div class="rating">★★★★★</div>
+                <button onclick="playGame('Minecraft')">
+                    Play Now
+                </button>
+            </div>
+        </div>
+
+        <div class="card" data-name="PUBG">
+            <div class="game-img">🎯</div>
+            <div class="info">
+                <h3>PUBG</h3>
+                <div class="rating">★★★★☆</div>
+                <button onclick="playGame('PUBG')">
+                    Play Now
+                </button>
+            </div>
+        </div>
+
+        <div class="card" data-name="Roblox">
+            <div class="game-img">🧱</div>
+            <div class="info">
+                <h3>Roblox</h3>
+                <div class="rating">★★★★★</div>
+                <button onclick="playGame('Roblox')">
+                    Play Now
+                </button>
+            </div>
+        </div>
+
+        <div class="card" data-name="Among Us">
+            <div class="game-img">🚀</div>
+            <div class="info">
+                <h3>Among Us</h3>
+                <div class="rating">★★★★☆</div>
+                <button onclick="playGame('Among Us')">
+                    Play Now
+                </button>
+            </div>
+        </div>
+
+        <div class="card" data-name="Subway Surfers">
+            <div class="game-img">🏃</div>
+            <div class="info">
+                <h3>Subway Surfers</h3>
+                <div class="rating">★★★★☆</div>
+                <button onclick="playGame('Subway Surfers')">
+                    Play Now
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="no-result" id="noResult">
+        No game found 😢
+    </div>
+
+</section>
+
+<section id="about">
+    <h2 class="title">🎮 About MD Sadan</h2>
+    <p>
+        MD Sadan Gaming is a simple gaming hub where you can
+        discover trending games and enjoy your gaming experience.
+    </p>
+</section>
+
+<footer>
+    © 2026 MD Sadan Gaming | All Rights Reserved
+</footer>
+
+<script>
+
+function playGame(game){
+    alert("🎮 " + game + " selected!");
+}
+
+// Search system
+document.getElementById("search").addEventListener("input", function(){
+
+    let searchText = this.value.toLowerCase();
+    let cards = document.querySelectorAll(".card");
+    let found = false;
+
+    cards.forEach(function(card){
+
+        let name = card.dataset.name.toLowerCase();
+
+        if(name.includes(searchText)){
+            card.style.display = "block";
+            found = true;
+        }else{
+            card.style.display = "none";
+        }
+
+    });
+
+    document.getElementById("noResult").style.display =
+        found ? "none" : "block";
+
+});
+
+</script>
+
+</body>
+</html>
