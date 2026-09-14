@@ -282,10 +282,24 @@ footer{
 </footer>
 
 <script>
-
 function playGame(game){
     alert("🎮 " + game + " selected!");
-}
+    }function playGame(game){
+
+    const gameLinks = {
+        "Free Fire": "https://ff.garena.com/en/",
+        "Minecraft": "https://www.minecraft.net/",
+        "PUBG": "https://www.pubgmobile.com/",
+        "Roblox": "https://www.roblox.com/",
+        "Among Us": "https://www.innersloth.com/games/among-us/",
+        "Subway Surfers": "https://subwaysurfers.com/"
+    };
+
+    if(gameLinks[game]){
+        window.open(gameLinks[game], "_blank");
+    }
+    }
+
 
 // Search system
 document.getElementById("search").addEventListener("input", function(){
